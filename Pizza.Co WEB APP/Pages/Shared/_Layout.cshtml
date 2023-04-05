@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Pizza.Co_WEB_APP</title>
+    <title>@ViewData["Title"] - Pizza.Co</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/images" asp-append-version="true" />
+    <link rel="stylesheet" href="~/js/site.js" asp-append-version="true" />
     <link rel="stylesheet" href="~/Pizza.Co_WEB_APP.styles.css" asp-append-version="true" />
 </head>
 
@@ -15,11 +17,11 @@
     <header>
         <section class="flex">
 
-            <a href="#" class="logo"><i class="fas fa-utensils"></i>food</a>
+            <a href="#" class="logo"><i class="fas fa-pizza-slice"></i>Pizza.Co</a>
 
             <div id="menu-bar" class="fas fa-bars"></div>
 
-            <nav class="navbar">
+            <nav class="navbar a">
                 <a href="#home">home</a>
                 <a href="#speciality">speciality</a>
                 <a href="#popular">popular</a>
@@ -30,21 +32,37 @@
 
         </section>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Pizza.Co_WEB_APP - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
+    <!-- footer section  -->
+
+    <footer class="footer">
+
+        <section>
+
+            <div class="share">
+                <a href="#" class="btn">facebook</a>
+                <a href="#" class="btn">twitter</a>
+                <a href="#" class="btn">instagram</a>
+                <a href="#" class="btn">pinterest</a>
+                <a href="#" class="btn">linkedin</a>
+            </div>
+
+            <h1 class="credit"> &copy; 2023 - Pizza.Co - <a asp-area="" asp-page="/Privacy">Privacy</a> </h1>
+
+        </section>
+
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
