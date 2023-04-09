@@ -8,28 +8,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/images" asp-append-version="true" />
+
     <link rel="stylesheet" href="~/js/site.js" asp-append-version="true" />
     <link rel="stylesheet" href="~/Pizza.Co_WEB_APP.styles.css" asp-append-version="true" />
 </head>
 
 <body>
     <header>
+
         <section class="flex">
 
-            <img src="~/css/images/icon4.png" /> <a href="#">Pizza.Co</a>           
+            <div class="icons1">
+                <img src="~/css/images/icon4.png" /> <a href="#">Pizza.Co</a>
+            </div>
+           
             <div id="menu-bar" class="fas fa-bars"></div>
 
-            <nav class="navbar a">
-                <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                <a href="#menu">menu</a>
-                <a class="nav-link text-dark" asp-area="" asp-page="/Contact">Contact Us</a>
+            <nav class="navbar">
+                <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                <a class="nav-link" asp-area="" asp-page="/Menu">Menu</a>
+                <a class="nav-link" asp-area="" asp-page="/Contact">Contact Us</a>
                 <a href="#order">order</a>
-                <a href="#checkout">checkout</a>
             </nav>
 
+            <div class="icons2">
+                <a class="fas fa-shopping-cart" asp-area="" asp-page="/Checkout"></a>
+            </div>
+
         </section>
+
     </header>
+
 
     <div class="container">
         <main role="main" class="pb-3">
@@ -37,7 +46,6 @@
         </main>
     </div>
 
-    -- footer section  --
 
     <footer class="footer">
 

@@ -37,11 +37,11 @@ section {
     text-align: center;
     font-size: 3.5rem;
     margin-bottom: 2.5rem;
-    color: #999;
+    color: black;
 }
 
 .heading span {
-    color: green;
+    color: gold;
 }
 
 .btn {
@@ -82,13 +82,12 @@ section {
 
 header {
     position: sticky;
-    height: 95px;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    background: #fff;
+    background-image: url('images/homebg3.jpg');
+    background-size: 300px;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
 
@@ -101,28 +100,29 @@ header .flex {
     padding-bottom: 1.5rem;
 }
 
-header a {
-    font-size: 2.5rem;
+header .flex .icons1 a {
+    font-size: 25px;
+    letter-spacing: 3px;
     font-weight: bolder;
-    margin-right: 20rem;
     color: gold;
     text-decoration: none;
 }
 
-header a:hover {
-    color: black;    
+header .flex .icons1 a:hover {
+    color: black;
+    text-decoration: none;
 }
 
-header img {
-    max-height: 80px;
-    max-width: 80px;
-    margin-left: 20px;
-        
+header .flex .icons1 img {
+    max-height: 70px;
+    max-width: 70px;
 }
 
 header .navbar a {
-    font-size: 18.5px;
-    margin-right: 8rem;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    margin-right: 50px;
     color: black;
     text-decoration: none;
 }
@@ -131,22 +131,45 @@ header .navbar a:hover {
     color: gold;
 }
 
-#menu-bar {
+header .flex .icons2 a {
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+header .flex .icons2 a:hover {
+    color: gold;
+    transform: rotate(360deg);
+}
+
+#menu-bar{
     font-size: 3rem;
     cursor: pointer;
-    color: green;
-    border: .1rem solid green;
-    border-radius: .3rem;
-    padding: .5rem 1.5rem;
+    color: gold;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px 15px;
     display: none;
 }
+
 
 .home-container {
     background-image: url('images/homebg3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    height: 100%;
+    width: 100%;
 }
+
 
 .home {
     display: flex;
@@ -182,13 +205,13 @@ header .navbar a:hover {
 }
 
 .home .content h3 {
-    font-size: 5rem;
-    color: #333;
+    font-size: 50px;
+    color: black;
 }
 
 .home .content p {
-    font-size: 1.7rem;
-    color: #666;
+    font-size: 20px;
+    color: black;
     padding: 1rem 0;
     line-height: 1.8;
 }
@@ -231,14 +254,15 @@ header .navbar a:hover {
 }
 
 .speciality .box-container .box .content h3 {
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 25px;
+    font-weight: bold;
+    color: gold;
     padding: .5rem 0;
 }
 
 .speciality .box-container .box .content p {
-    font-size: 1.5rem;
-    color: #666;
+    font-size: 14px;
+    color: black;
     padding-top: .5rem;
     line-height: 1.8;
 }
@@ -280,8 +304,8 @@ header .navbar a:hover {
     position: absolute;
     top: 3rem;
     left: 3rem;
-    background: var(--red);
-    color: #fff;
+    background: black;
+    color: gold;
     font-size: 2rem;
     padding: .5rem 1rem;
     border-radius: .5rem;
@@ -398,7 +422,7 @@ header .navbar a:hover {
 
 .review .box-container .box .stars i {
     font-size: 2rem;
-    color: var(--red);
+    color: gold;
     padding: .5rem 0;
 }
 
@@ -483,17 +507,10 @@ section {
     flex-wrap: wrap;
 }
 
-.footer section .credit {
-    color: #fff;
-    font-weight: normal;
-    font-size: 2rem;
-    margin-top: 3rem;
-}
-
-.footer section .cpright {
+footer section .cpright {
     color: black;
     font-weight: normal;
-    font-size: 2rem;
+    font-size: 28px;
     margin-top: 3rem;
     
 }
@@ -534,4 +551,72 @@ section {
 .loader-container.fade-out {
     top: -120%;
 }
+
+/* media queries  */
+
+@media(max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    header{
+        padding: 2rem;
+    }
+}
+
+@media(max-width:700px) {
+
+    #menu-bar {
+        display: initial;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f7f7f7;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        display: block;
+        border: .2rem solid gold;
+        border-left: .5rem solid gold;
+        background-color: white;
+    }
+
+    .home .content h3 {
+        font-size: 3.5rem;
+    }
+}
+
+@media(max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .order .row form .inputBox input {
+        width: 100%;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    .steps .box h3 {
+        font-size: 2.5rem;
+    }
+}
+
+
 
