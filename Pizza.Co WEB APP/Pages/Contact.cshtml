@@ -4,6 +4,51 @@
     ViewData["Title"] = "Contact Us";
 }
 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site3.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/js/site.js" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Pizza.Co_WEB_APP.styles.css" asp-append-version="true" />
+</head>
+
+
 <div class="loader-container">
     <img src="~/css/images/loader2.gif" alt="">
 </div>
+
+<body>
+    <section class="order" id="order">
+
+        <h1 class="heading"> <span>Contact</span> Us </h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="~/css/images/loader2.gif" />
+            </div>
+
+            <form action="">
+
+                <div class="inputBox">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                </div>
+
+                <div class="inputBox">
+                    <input type="number" placeholder="Number">
+                    <input type="text" placeholder="Address">
+                </div>
+
+                <textarea placeholder="Leave us a message..."></textarea>
+
+                <input type="submit" value="Send" class="btn">
+
+            </form>
+
+        </div>
+
+    </section>
+</body>

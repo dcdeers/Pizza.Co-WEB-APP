@@ -1,3 +1,5 @@
+/* home */
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 
 * {
@@ -487,7 +489,7 @@ header .flex .icons2 a:hover {
 }
 
 .order .row form .btn:hover {
-    background: var(--red);
+    background-color: dimgrey;
 }
 
 .footer {
@@ -524,8 +526,9 @@ footer section .cpright {
     width: 5rem;
     line-height: 4.5rem;
     text-align: center;
-    background: var(--red);
-    color: #fff;
+    text-decoration: none;
+    background-color: gold;
+    color: black;
     border-radius: .5rem;
     transition: .5s linear;
     z-index: 1000;
