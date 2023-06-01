@@ -1,0 +1,36 @@
+﻿@page
+@model Pizza.Co_WEB_APP.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site4.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Pizza.Co_WEB_APP.styles.css" asp-append-version="true" />
+</head>
+
+
+<h2>Login</h2>
+<form method="post">
+    <h4>Use a local account to log in.</h4>
+
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Input.Email"></label>
+        <input asp-for="Input.Email" />
+        <span asp-validation-for="Input.Email"></span>
+    </div>
+    <div>
+        <label asp-for="Input.Password"></label>
+        <input asp-for="Input.Password" />
+        <span asp-validation-for="Input.Password"></span>
+    </div>
+    <div>
+        <button type="submit" class="btn">Log in</button>
+    </div>
+</form>

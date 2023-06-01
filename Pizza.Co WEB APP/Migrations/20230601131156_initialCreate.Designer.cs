@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pizza.Co_WEB_APP.Data;
 
@@ -11,9 +12,11 @@ using Pizza.Co_WEB_APP.Data;
 namespace Pizza.Co_WEB_APP.Migrations
 {
     [DbContext(typeof(PizzaCo_WEB_APPContext))]
-    partial class PizzaCo_WEB_APPContextModelSnapshot : ModelSnapshot
+    [Migration("20230601131156_initialCreate")]
+    partial class initialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

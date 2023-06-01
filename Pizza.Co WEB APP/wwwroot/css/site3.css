@@ -162,3 +162,7 @@ body {
     color: gold;
 }
 
+iframe {
+    width: 50%;
+    height: 70%;
+}

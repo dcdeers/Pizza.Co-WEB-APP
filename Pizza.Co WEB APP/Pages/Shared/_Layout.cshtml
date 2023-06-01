@@ -26,10 +26,19 @@
             <div id="menu-bar" class="fas fa-bars"></div>
 
             <nav class="navbar">
+
                 <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
                 <a class="nav-link" asp-area="" asp-page="/Menu">Menu</a>
                 <a class="nav-link" asp-area="" asp-page="/Contact">Contact Us</a>
                 <a class="nav-link" asp-area="" asp-page="/Order">Order Now</a>
+                <a asp-page="/Account/Register">Register</a>
+                <a asp-page="/Account/Login">Log in</a>
+                <button type="submit">Logout</button>
+
+                <form asp-page="/Account/Logout" method="post">
+                    <button type="submit" class="btn">Logout</button>
+                </form>
+
             </nav>
 
             <div class="icons2">

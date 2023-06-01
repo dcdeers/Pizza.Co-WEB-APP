@@ -3,6 +3,20 @@
 @{
     ViewData["Title"] = "Home page";
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Identity
+@using Pizza.Co_WEB_APP.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@if (SignInManager.IsSignedIn(User))
+{
+    <h2>Hello @UserManager.GetUserName(User)</h2>
+    if (User.IsInRole("Admin"))
+    {
+        <h2>Only admin users can see this!</h2>
+    }
+
+}
 
 <head>
     <meta charset="utf-8" />
@@ -20,7 +34,7 @@
         <div class="content">
             <h3>Taste like paradise.</h3>
             <p>One bite and you can taste heaven.</p>
-            <a href="#" class="btn">order now</a>
+            <a href= "Menu" class="btn">order now</a>
         </div>
 
         <div class="image">
@@ -31,299 +45,6 @@
 
 </div>
 
--- speciality section starts  --
-
-<section class="speciality" id="speciality">
-
-    <h1 class="heading"> Our <span>Specials</span> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <img class="image" src="~/css/images/pizza1.jpg">
-            <div class="content">
-                <img src="~/css/images/s-2.png" alt="">
-                <h3>Pizza</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore iusto, dignissimos illum similique placeat culpa?</p>
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="~/css/images/Lasagna.jpg">
-            <div class="content">
-                <img src="#" alt="">
-                <h3>Lasagna</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore iusto, dignissimos illum similique placeat culpa?</p>
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="#">
-            <div class="content">
-                <img src="#" alt="">
-                <h3>Calzone</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore iusto, dignissimos illum similique placeat culpa?</p>
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="~/css/images/7up.jpg" />
-            <div class="content">
-                <img src="~/css/images/s-4.png" alt="">
-                <h3>Cold Drinks</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore iusto, dignissimos illum similique placeat culpa?</p>
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="~/css/images/g-5.jpg">
-            <div class="content">
-                <img src="~/css/images/s-5.png" alt="">
-                <h3>Desserts</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore iusto, dignissimos illum similique placeat culpa?</p>
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="#">
-            <div class="content">
-                <img src="#" alt="">
-                <h3>Appetizers</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore iusto, dignissimos illum similique placeat culpa?</p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
--- speciality section ends --
--- popular section starts  --
-
-<section class="popular" id="popular">
-
-    <h1 class="heading"> Our <span>Favourite</span> Dishes </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="~/css/images/pizza1.jpg" alt="">
-            <h3>Pepperoni Pizza</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <a href="#" class="btn">order now</a>
-        </div>
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="~/css/images/Lasagna.jpg" alt="">
-            <h3>Beef Lasagna</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <a href="#" class="btn">order now</a>
-        </div>
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="#" alt="">
-            <h3>New York Calzone</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <a href="#" class="btn">order now</a>
-        </div>
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="~/css/images/p-4.jpg" alt="">
-            <h3>tasty cupcakes</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <a href="#" class="btn">order now</a>
-        </div>
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="~/css/images/p-5.jpg" alt="">
-            <h3>cold drinks</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <a href="#" class="btn">order now</a>
-        </div>
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="~/css/images/p-6.jpg" alt="">
-            <h3>cold ice-cream</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <a href="#" class="btn">order now</a>
-        </div>
-
-    </div>
-
-</section>
-
--- popular section ends --
-
--- gallery section starts  --
-
-<section class="gallery" id="gallery">
-
-    <h1 class="heading"> our food <span> gallery </span> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <img src="#" alt="">
-            <div class="content">
-                <h3>tasty food</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
-                <a href="#" class="btn">ordern now</a>
-            </div>
-        </div>
-        <div class="box">
-            <img src="#" alt="">
-            <div class="content">
-                <h3>tasty food</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
-                <a href="#" class="btn">ordern now</a>
-            </div>
-        </div>
-        <div class="box">
-            <img src="#" alt="">
-            <div class="content">
-                <h3>tasty food</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
-                <a href="#" class="btn">ordern now</a>
-            </div>
-        </div>
-        <div class="box">
-            <img src="~/css/images/g-4.jpg" alt="">
-            <div class="content">
-                <h3>tasty food</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
-                <a href="#" class="btn">ordern now</a>
-            </div>
-        </div>
-        <div class="box">
-            <img src="~/css/images/g-5.jpg" alt="">
-            <div class="content">
-                <h3>tasty food</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
-                <a href="#" class="btn">ordern now</a>
-            </div>
-        </div>
-        <div class="box">
-            <img src="#" alt="">
-            <div class="content">
-                <h3>tasty food</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
-                <a href="#" class="btn">ordern now</a>
-            </div>
-        </div>
-        <div class="box">
-            <img src="#" alt="">
-            <div class="content">
-                <h3>tasty food</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
-                <a href="#" class="btn">ordern now</a>
-            </div>
-        </div>
-        <div class="box">
-            <img src="~/css/images/g-8.jpg" alt="">
-            <div class="content">
-                <h3>tasty food</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
-                <a href="#" class="btn">ordern now</a>
-            </div>
-        </div>
-        <div class="box">
-            <img src="~/css/images/g-9.jpg" alt="">
-            <div class="content">
-                <h3>tasty food</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, ipsum.</p>
-                <a href="#" class="btn">ordern now</a>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
--- gallery section ends --
--- review section starts  --
-
-<section class="review" id="review">
-
-    <h1 class="heading"> customers <span>reviews</span> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <img src="#" alt="">
-            <h3>john deo</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti delectus, ducimus facere quod ratione vel laboriosam? Est, maxime rem. Itaque.</p>
-        </div>
-        <div class="box">
-            <img src="#" alt="">
-            <h3>john deo</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti delectus, ducimus facere quod ratione vel laboriosam? Est, maxime rem. Itaque.</p>
-        </div>
-        <div class="box">
-            <img src="#" alt="">
-            <h3>john deo</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti delectus, ducimus facere quod ratione vel laboriosam? Est, maxime rem. Itaque.</p>
-        </div>
-
-    </div>
-
-</section>
-
--- review section ends --
--- order section starts  --
-
 <section class="order" id="order">
 
     <h1 class="heading"> <span>order</span> now </h1>
@@ -331,7 +52,7 @@
     <div class="row">
 
         <div class="image">
-            <img src="#" alt="">
+            <img src="~/css/images/loader2.gif" alt="">
         </div>
 
         <form action="">
@@ -356,7 +77,6 @@
 
 </section>
 
--- order section ends --
 
 <a href="#home" class="fas fa-angle-up" id="scroll-top"></a>
 
